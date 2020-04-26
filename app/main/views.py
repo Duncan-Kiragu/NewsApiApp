@@ -1,5 +1,7 @@
 from flask import render_template,request
 from . import main
+from flask_bootstrap import Bootstrap
+from flask_nav import Nav
 from ..requests import get_sources_by_cat,get_all_articles,get_headline_articles
 from ..models import Source,Article
 
@@ -7,6 +9,15 @@ from ..models import Source,Article
 # Views
 # @app.route('/')
 # def index():
+nav = Nav()
+@nav.navigation('mysite_navbar')
+def create_navbar()
+	home_view = View('Home','general')
+	article_view = View('Articles','articles')
+	headlines_view = View('Headlines','jeadlines')
+
+	return Navbar('MySite',home_view,article_view,headlines_view)
+
 
 @main.route('/')
 def general():

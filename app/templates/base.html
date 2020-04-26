@@ -1,0 +1,12 @@
+{% block styles%}
+{{ super() }}
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Old+Standard+TT|Roboto" rel="stylesheet">
+<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+{% endblock %}
+
+
+<!-- Navbar block  --> 
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock %}
