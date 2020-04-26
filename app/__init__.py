@@ -1,8 +1,14 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap
+from flask_nav import Nav
+from flask_nav.elements import Navbar, Subgroup, View
 from config import config_options
 
 bootstrap = Bootstrap()
+nav = Nav()
+@nav.navigation('mysite_navbar')
+def create_navbar()
+	home_view = View('Home')
 
 def create_app(config_name):
 

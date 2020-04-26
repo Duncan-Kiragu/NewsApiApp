@@ -4,11 +4,15 @@ from ..requests import get_sources_by_cat,get_all_articles,get_headline_articles
 from ..models import Source,Article
 
 # Changing app routes to main route
+# Views
+# @app.route('/')
+# def index():
+
 @main.route('/')
 def general():
 
     '''
-    View root page function that returns the general news sources by category
+    View root page function that returns the news sources
     '''
     general = get_sources_by_cat('general')
     business = get_sources_by_cat('business')
@@ -31,3 +35,18 @@ def articles(id):
 
 
     return render_template('articles.html', articles=articles, title=title)
+
+
+@main.route('/headlines/<en>')
+def headlines(en):
+    '''
+    view page function that returns the topheadlines by langauge
+    '''
+    headlines = get_headline_articles('en')
+    title = 'News Now'
+
+
+    return render_template('headlines.html', headlines=headlines, title=title)
+
+    
+  
