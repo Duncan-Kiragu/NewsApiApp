@@ -6,20 +6,10 @@ class Config:
     '''
     
     NEWS_API_BASE_URL = 'https://newsapi.org/v2/sources?category={}&apiKey={}'
-    ARTICLES_URL ='https://newsapi.org/v2/everything?q={}&apiKey={}'
-    # ARTICLES_URL ='https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'
-    HEADLINES_URL ='https://newsapi.org/v2/top-headlines?language={}&apiKey={}'
+    ARTICLES_URL ='https://newsapi.org/v2/everything?sources={}&apiKey={}'
+    HEADLINES_URL ='https://newsapi.org/v2/top-headlines?country=us&apiKey={}'
     NEWS_API_KEY = os.environ.get('NEWS_API_KEY')
-
-    # SECRET_KEY = os.environ.get('SECRET_KEY')
-
-    # https://newsapi.org/v2/top-headlines?language=en&apiKey=3f7ad7ad6ae546a28feead545feea3c4
-    # NEWS_API_BASE_URL = 'https://newsapi.org/v2?sources={}&apiKey={}'
-    # NEWS_API_BASE_URL = 'https://newsapi.org/v2/?sources={}&apiKey={}'
-    # NEWS_API_BASE_URL = 'https://newsapi.org/v2/{}?sources={}&apiKey={}'
-    # NEWS_API_BASE_URL = 'https://newsapi.org/v2/{}?language=en&category={}&sources={}&q={}&apiKey={}'
-
-
+    SECRET_KEY = os.environ.get('SECRET_KEY')
 
 class ProdConfig(Config):
     '''

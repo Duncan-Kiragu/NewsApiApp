@@ -4,18 +4,15 @@ import json
 # from .models import Source
 from .models import Source,Article
 
-# Source = source.Source
-# Article = article.Article
+#Source = source.Source
+#Article = article.Article
 
 # Getting api key
 api_key = None
-# api_key='3f7ad7ad6ae546a28feead545feea3c4'
 
-# Getting the sources base url
+# getting urls
 base_url = None
-# Getting the article url
 articles_url = None
-# to headlines
 headlines_url = None
 
 def configure_request(app):
@@ -26,20 +23,12 @@ def configure_request(app):
     headlines_url = app.config["HEADLINES_URL"]
 
 
-
-# Getting the sources base url
-# base_url = app.config["NEWS_API_BASE_URL"]
-# Getting the article url
-# articles_url = app.config["ARTICLES_URL"]
-# to headlines
-# headlines_url = app.config["HEADLINES_URL"]
-
 def get_sources_by_cat(category):
     '''
     Function that gets the json response to our url request
     '''
     get_sources_url = base_url.format(category,api_key)
-
+    print(get_sources_url)
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
         get_sources_response = json.loads(get_sources_data)
